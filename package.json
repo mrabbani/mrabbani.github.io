@@ -6,7 +6,6 @@
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
-    "buble": "^0.14.2",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-9",
@@ -17,6 +16,8 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
-    "typeahead.js": "^0.11.1"
+    "laravel-echo": "^1.0.5",
+    "pusher-js": "^3.2.1",
+    "vuex": "^2.0.0"
   }
 }
