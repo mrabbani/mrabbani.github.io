@@ -1,18 +1,18 @@
-
 <template>
-  <input v-model="query" ref="input" class="typeahead-suggestions"
+  <input ref="input" class="typeahead-suggestions"
          :class="classes"
          :id = "id"
          v-bind:value="value"
          v-on:input="updateValue($event.target.value)"
          v-on:blur="formatValue"
+         :placeholder="placeholder"
           >
 </template>
 <script>
   var Bloodhound = require('typeahead.js')
   export default {
     data: function() {
-      var id =  'typeahead-suggestion' + parseInt( Math.random() *100000);
+      var id =  'typeahead-suggestion' + parseInt(Math.random() *100000);
       return {
         id,
         defaultSuggestions: [],
@@ -48,80 +48,150 @@
       defaultSuggestion: {
         type: Boolean,
         default: true
+      },
+      remote: {
+        type: String,
+        default: ''
+      },
+      placeholder: {
+        type: String,
+        default: ''
+      },
+      local: {
+        type: Array,
+        default: null
+      },
+      responseWrapper: {
+        type: String,
+        default: ''
       }
     },
+
+    watch:{
+      local: function(newVal) {
+        if(this.defaultSuggestion) {
+
+          this.defaultSuggestions = [...newVal];
+        }
+        this.resetTypeahead();
+        console.log('watching');
+      }
+    },
+
     mounted: function() {
-      var self =  this;
-      var bloodhoundConfig = {};
-      if(this.defaultSuggestion && this.prefetch) {
-        bloodhoundConfig = {
-          prefetch: {
-            cache: false,
-            url: self.prefetch,
-            transform: function (response) {
-              self.defaultSuggestions = response.splice(0, 5);
-              return response;
-            }
-          }
-        };
-      } else if(this.prefetch) {
-        bloodhoundConfig =  {prefetch: self.prefetch};
-      }
-      var nflTeams = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace(self.displayKey),
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        identify: function(obj) { return obj[self.displayKey];},
-        ...bloodhoundConfig
-      });
-
-      function nflTeamsWithDefaults(q, sync) {
-        var data = nflTeams;
-        if (q === '') {
-          console.log(self.defaultSuggestions);
-          sync(self.defaultSuggestions);
-        } else {
-          nflTeams.search(q, sync);
-        }
-      }
-
-      var template = {};
-      if(this.suggestionTemplate) {
-        template = {
-          templates: {
-            suggestion: self.parseTemplate
-          }
-        }
-      };
-
-      $(document).find('#' + self.id).typeahead({
-          minLength: 0,
-          highlight: true
-        },
-        {
-          name: 'nfl-teams',
-          display: self.displayKey,
-          source: nflTeamsWithDefaults,
-          ...template
-        }).on('typeahead:select', function(event, suggession) {
-          self.$emit('selected', suggession);
-      });
+      this.initTypeahead();
     },
+
     methods: {
       updateValue: function (value) {
         this.$emit('input', value)
       },
+
       formatValue: function () {
         this.$refs.input.value = this.value;
       },
+
+      transformer: function (response) {
+        if(this.responseWrapper) {
+          response = response[this.responseWrapper];
+        }
+        if(this.defaultSuggestion) {
+          this.defaultSuggestions = response.splice(0, 5);
+        }
+        return response;
+      },
+
+      bloodhoundOption: function(){
+        var bloodhoundConfig = {};
+        if(this.prefetch) {
+          var prefetch = {
+            cache: false,
+            url: this.prefetch
+          };
+          if(this.defaultSuggestion) {
+            prefetch = {...prefetch, transform: this.transformer};
+          }
+          bloodhoundConfig = { prefetch};
+        }
+        if(this.local) {
+          bloodhoundConfig = {
+            local: this.local,
+            ...bloodhoundConfig
+          }
+        }
+        if(this.remote) {
+          bloodhoundConfig = {
+            remote: {
+              url: this.remote,
+              wildcard: '%QUERY',
+              transform: this.transformer
+            },
+            ...bloodhoundConfig
+          }
+        }
+        return bloodhoundConfig;
+      },
+
       parseTemplate: function(data) {
         var res = Vue.compile(this.suggestionTemplate);
         var vm =new Vue({
-            data,
-            render: res.render,
-            staticRenderFns: res.staticRenderFns
+          data,
+          render: res.render,
+          staticRenderFns: res.staticRenderFns
         }).$mount();
 
         return vm.$el;
+      },
+
+      getSource: function(){
+        var self = this;
+        var bloodhoundConfig = this.bloodhoundOption();
+        var datumTokenizer = this.displayKey ? Bloodhound.tokenizers.obj.whitespace(this.displayKey)
+                        :  Bloodhound.tokenizers.whitespace;
+
+        var engine = new Bloodhound({
+          datumTokenizer,
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          ...bloodhoundConfig
+        });
+
+        var source = function(q, sync) {
+          if (q === '' && self.defaultSuggestions.length>0 && self.defaultSuggestion) {
+            console.log('default')
+            sync(self.defaultSuggestions);
+          } else {
+            engine.search(q, sync);
+          }
+        };
+
+        return this.defaultSuggestion ? source : engine;
+      },
+
+      resetTypeahead: function() {
+        $(document).find('#' + this.id).typeahead('destroy');
+        this.initTypeahead();
+      },
+
+      initTypeahead: function() {
+        var self =  this;
+        var templates = {};
+        if(this.suggestionTemplate) {
+          templates = {suggestion: self.parseTemplate}
+        };
+        var dataset = {
+          name: 'Typeahead-Suggestion',
+          display: this.displayKey,
+          source: this.getSource(),
+          templates
+        };
+        $(document).find('#' + self.id).typeahead({
+            minLength: 0,
+            highlight: true
+          }, dataset)
+        .on('typeahead:select', function(event, suggession) {
+          self.$emit('input', self.displayKey? suggession[self.displayKey]: suggession)
+          self.$emit('selected', suggession);
+        });
       }
     }
   }
