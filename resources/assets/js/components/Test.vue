@@ -13,8 +13,8 @@
 
         <vue-typeahead
                 prefetch = "https://twitter.github.io/typeahead.js/data/films/post_1960.json"
-                remote = "https://twitter.github.io/typeahead.js/data/films/queries/%QUERY.json"
                        display-key = 'value'
+                       remote = "https://twitter.github.io/typeahead.js/data/films/queries/%QUERY.json'"
                        v-on:selected="done"></vue-typeahead>
     </div>
 

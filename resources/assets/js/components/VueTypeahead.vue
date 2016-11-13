@@ -31,7 +31,7 @@
       },
       displayKey: {
         type: String,
-        default: ''
+        required: true
       },
       suggestionTemplate: {
         type: String,
@@ -66,7 +66,6 @@
         default: ''
       }
     },
-
     watch:{
       local: function(newVal) {
         if(this.defaultSuggestion) {
