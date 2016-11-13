@@ -31,7 +31,7 @@
       },
       displayKey: {
         type: String,
-        default: ''
+        required: true
       },
       suggestionTemplate: {
         type: String,
@@ -48,6 +48,10 @@
       defaultSuggestion: {
         type: Boolean,
         default: true
+      },
+      remote: {
+        type: String,
+        default: ''
       }
     },
     mounted: function() {
@@ -66,8 +70,18 @@
         };
       } else if(this.prefetch) {
         bloodhoundConfig =  {prefetch: self.prefetch};
+        }
+
+    if(this.remote) {
+      bloodhoundConfig = {
+        remote: {
+          url: self.remote,
+          wildcard: '%QUERY'
+        },
+        ...bloodhoundConfig
       }
-      var nflTeams = new Bloodhound({
+    }
+    var nflTeams = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace(self.displayKey),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         identify: function(obj) { return obj[self.displayKey];},
