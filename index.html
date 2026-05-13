@@ -489,6 +489,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#work">Case studies</a>
+      <a href="#other-work">Other work</a>
       <a href="#contributions">Contributions</a>
       <a href="#contact">Contact</a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Theme</button>
@@ -540,9 +541,11 @@
           plugin and stepping into the CTO role at <strong>weLabs</strong>.
         </p>
         <p>
-          My work today centers on three threads: leading the Dokan plugin family (Tailwind v4 migration, schema-driven UI,
-          Playwright E2E hardening), building the cross-plugin <a href="https://github.com/getdokan/plugin-ui" target="_blank" rel="noopener">plugin-ui</a>
-          component library, and exploring how the Model Context Protocol can bring AI agents into the WordPress world
+          My work today centers on three threads: leading the Dokan plugin family — a multivendor WordPress ecosystem
+          powering <strong>60,000+ marketplaces</strong> — through major releases like V4.0, modernizing its admin/vendor
+          panels from jQuery+Vue to React, and integrating payment gateways and analytics. Alongside that I build the
+          cross-plugin <a href="https://github.com/getdokan/plugin-ui" target="_blank" rel="noopener">plugin-ui</a>
+          component library and explore how the Model Context Protocol can bring AI agents into the WordPress world
           via my <a href="https://github.com/mrabbani/mcp-site-manager" target="_blank" rel="noopener">mcp-site-manager</a> project.
         </p>
         <p>
@@ -711,31 +714,179 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES -->
+  <!-- CASE STUDIES — Tier 1: Dokan engineering leadership -->
   <section id="work">
-    <div class="section-kicker">Selected work</div>
-    <h2>Flagship case studies</h2>
-    <p class="section-sub">A representative slice — open-source plugins, internal platforms, and product launches I led or co-led.</p>
+    <div class="section-kicker">Engineering leadership</div>
+    <h2>Selected Dokan case studies</h2>
+    <p class="section-sub">Five projects that show how I lead releases, modernize legacy codebases, and ship cross-system features in the Dokan multivendor WordPress ecosystem — powering 60,000+ marketplaces.</p>
 
     <div class="cases">
 
       <article class="case">
         <div class="case-head">
-          <h3><a href="https://github.com/getdokan/dokan" target="_blank" rel="noopener">getdokan/dokan</a></h3>
-          <span class="badge">Open source · Core contributor</span>
+          <h3>Dokan V4.0 — Major Version Release</h3>
+          <span class="badge">Release lead · 18+ modules</span>
         </div>
-        <div class="row-flex"><span class="stars">★ 285</span><span class="pill">52 merged PRs</span></div>
-        <p>The multivendor marketplace plugin for WooCommerce — used by tens of thousands of stores. I lead engineering for the Dokan family at weDevs.</p>
+        <div class="row-flex"><span class="pill">QA matrix · 14 modules</span><span class="pill">Backward-compatible commission</span></div>
+        <p><strong>Problem.</strong> A major version bump required coordinating breaking changes, a new brand color, redesigned onboarding, refactored emails, a React-based admin/vendor panel, and full backward-compatible commission calculation — without breaking sites already live in production.</p>
+        <p><strong>What I did.</strong></p>
         <ul>
-          <li>Drove the <strong>Tailwind v4 migration</strong> across the admin and vendor dashboard.</li>
-          <li>Stood up the <strong>Playwright E2E pipeline</strong> as the default test harness; hardened analytics test stability.</li>
-          <li>Refactored dashboard panel switching and email template flows for maintainability.</li>
-          <li>Reviewer-of-record: <strong>282 code reviews in 2025</strong> across the Dokan product line.</li>
+          <li>Defined the release tracker, version-bump strategy, and changelog.</li>
+          <li>Drove the V4 manual-testing program covering Withdraw, Coupon, RMA, Staff, Store SEO, Shipping, Vendor &amp; Product Subscription, Announcement, Admin/Vendor Analytics, Admin Onboarding, Manual Order Creation, Commission backward-compatibility, Dokan Intelligence AI, and the new brand color.</li>
+          <li>Maintained the V4 bug tracker and resolved release-blockers across documentation, modals, dummy-data imports, and help-center URLs.</li>
+          <li>Removed deprecated code paths ahead of the cut.</li>
         </ul>
+        <p><strong>Impact.</strong> Shipped V4.0 to production with a coordinated test matrix across 18+ modules. The release-engineering pattern I established (sub-issues per module, "Awaiting QA" labels, parent tracker) is now reused for every minor release — including Dokan 4.2.0.</p>
         <div class="tags chips">
-          <span class="chip">PHP</span><span class="chip">React/TS</span><span class="chip">Tailwind v4</span><span class="chip">Playwright</span>
+          <span class="chip">Release engineering</span><span class="chip">PHP</span><span class="chip">React/TS</span><span class="chip">QA process</span>
         </div>
       </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>React Migration of a Legacy WordPress Plugin Frontend</h3>
+          <span class="badge">Architect &amp; implementer</span>
+        </div>
+        <div class="row-flex"><span class="pill">5 vendor modules migrated</span><span class="pill">Dokan Data Store</span></div>
+        <p><strong>Problem.</strong> Dokan's vendor and admin panels were a tangle of jQuery, Vue, and templated PHP — global mutation, inconsistent state management, slow module rollout, hard to test.</p>
+        <p><strong>What I did.</strong></p>
+        <ul>
+          <li>Built the <strong>Dokan Data Store</strong> and a <strong>React HOC library</strong> — the foundation every subsequent module reused.</li>
+          <li>Established <strong>API development guidelines</strong> and <strong>frontend slot-fill / filter standards</strong> so other engineers could ship consistently.</li>
+          <li>Migrated five vendor-panel modules end-to-end — Announcement, Store SEO, Product Subscription, Shipping, Staff — plus Vendor Dashboard Withdraw.</li>
+          <li>Shipped the React-based Admin Panel Header and unified admin dashboard structure.</li>
+          <li>Removed global mutation by routing everything through Dokan Modal.</li>
+        </ul>
+        <p><strong>Impact.</strong> The vendor panel went from "every module its own jQuery snowflake" to a consistent React app with a shared data layer. Module rollout time dropped meaningfully and the patterns set here are still being followed.</p>
+        <div class="tags chips">
+          <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Slot-fill</span><span class="chip">REST APIs</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Marketplace Analytics &amp; Admin Dashboard</h3>
+          <span class="badge">Backend architect</span>
+        </div>
+        <div class="row-flex"><span class="pill">Query optimization</span><span class="pill">Analytics RFC</span></div>
+        <p><strong>Problem.</strong> The admin dashboard was slow and the analytics reports were <em>wrong</em>. WooCommerce's analytics tables (<code>wc_order_stats</code>, <code>wc_order_product_lookup</code>) double-counted Dokan suborders and their refunds, inflating GMV. Marketplace operators couldn't trust the numbers.</p>
+        <p><strong>What I did.</strong></p>
+        <ul>
+          <li>Shipped optimized queries &amp; APIs for the new admin dashboard: Monthly Overview, TODO Section, Customer Metrics, All-Time Marketplace Stats, Top Performing Vendor, Most Reviewed Product.</li>
+          <li>Built the implementation plan, component layer, and WC Admin Analytics ↔ Dokan compatibility.</li>
+          <li>Authored a seller-analytics RFC proposing a new <code>dokan_order_stats</code> table that mirrors WC's schema but adds <code>seller_id</code> and <code>is_suborder</code> — cleanly separating seller earning, gateway fees, discounts, admin commission, and <strong>admin subsidy</strong> (when an admin-funded discount exceeds the commission, e.g. a $20 discount on a $100 product at 10% commission means the marketplace eats $10).</li>
+        </ul>
+        <p><strong>Impact.</strong> Admin dashboard load improved; the operator-facing "all-time marketplace stats" widget exists today because of this work. The seller-analytics RFC sets up the next phase of fixing analytics correctness at the data-warehouse layer.</p>
+        <div class="tags chips">
+          <span class="chip">MySQL</span><span class="chip">Query optimization</span><span class="chip">RFC / design</span><span class="chip">WooCommerce</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Payment Gateway Integrations — Paystack &amp; Stripe Express</h3>
+          <span class="badge">Full-stack owner</span>
+        </div>
+        <div class="row-flex"><span class="pill">Paystack: shipped</span><span class="pill">Stripe Express</span><span class="pill">Vendor Subscription RFC</span></div>
+        <p><strong>Problem.</strong> Marketplace payment gateways aren't just "process the card." You're splitting funds between admin and vendors, handling per-vendor onboarding, supporting refunds (which redistribute commission backward), and surviving webhook retries that must be idempotent.</p>
+        <p><strong>What I did — Paystack (shipped end-to-end).</strong></p>
+        <ul>
+          <li>Vendor onboarding via Paystack sub-accounts.</li>
+          <li>Make-payment with multi-party split.</li>
+          <li>Refund logic that correctly reverses commission.</li>
+          <li>Webhook handler for async settlement events.</li>
+        </ul>
+        <p><strong>Stripe Express.</strong> Integration with WC Stripe; refactored emails for Stripe / Stripe Express; resolved guest-checkout PHP warnings.</p>
+        <p><strong>Vendor Subscription module RFC (open).</strong> Designed the next-gen module covering switching (upgrade/downgrade with returnable amounts), renewal with grace periods, cancellation with trial-period handling, and extension offers — including a worked example of grace-period overlap when one subscription fails and the vendor subscribes to a different plan.</p>
+        <p><strong>Impact.</strong> Paystack is in production powering African-market vendors. The subscription RFC codifies edge cases nobody had written down — switching, grace periods, cancellation timing — into a single design that handles credit cards as a first-class payment method.</p>
+        <div class="tags chips">
+          <span class="chip">PHP</span><span class="chip">Payments</span><span class="chip">Webhooks</span><span class="chip">RFC / design</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Multilingual Push Notification System</h3>
+          <span class="badge">System designer · WP → Flutter via OneSignal</span>
+        </div>
+        <div class="row-flex"><span class="pill">100K+ devices</span><span class="pill">&lt; 10s e2e latency target</span></div>
+        <p><strong>Problem.</strong> The Dokan mobile app needs push notifications driven by WordPress events (new order, low stock, refund, announcement) — delivered in the user's preferred language across 100K+ devices, with reliable delivery and no synchronous coupling to the WP request lifecycle.</p>
+        <p><strong>What I did.</strong> Authored a full feature spec broken into 6 implementation sub-issues so the team could parallelize:</p>
+        <ul>
+          <li>WordPress Plugin Core — hook integration &amp; OneSignal API client.</li>
+          <li>Multilingual content handling via WPML — translations resolved server-side.</li>
+          <li>User segmentation &amp; targeting — role, location, content-type filters.</li>
+          <li>Flutter app integration — OneSignal SDK, lifecycle, deep linking.</li>
+          <li>Notification management &amp; admin UI.</li>
+          <li>Non-functional requirements.</li>
+        </ul>
+        <p><strong>Notable design decisions.</strong></p>
+        <ul>
+          <li>End-to-end latency target &lt; 10s (WP hook → device), with &lt; 500ms WP-side budget.</li>
+          <li>No synchronous OneSignal calls from WP hooks — everything goes through Action Scheduler, so request threads stay fast and notifications retry independently.</li>
+          <li>Retry policy: exponential backoff at 1s / 4s / 16s (3 retries), then dead-letter logging.</li>
+          <li>Scale strategy: at 100K+ users, fan-out happens inside OneSignal segments — never iterate users in PHP.</li>
+          <li>Security: REST API key in a <code>wp-config.php</code> constant (not <code>wp_options</code>), HTTPS only, XSS-sanitized payloads, <code>manage_options</code> capability checks, rate-limited manual sends.</li>
+        </ul>
+        <p><strong>Impact.</strong> This is the design document the implementation team is now building from. The decomposition (6 parallelizable sub-issues with explicit interfaces) is the same pattern I use for every multi-engineer feature.</p>
+        <div class="tags chips">
+          <span class="chip">PHP</span><span class="chip">Flutter</span><span class="chip">OneSignal</span><span class="chip">WPML</span><span class="chip">Action Scheduler</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Patterns -->
+    <div style="margin-top: 36px;">
+      <h3 style="font-size:18px;margin:0 0 12px;">Supporting work — patterns across these case studies</h3>
+      <div class="orgs">
+        <div class="org">
+          <h4>Email system refactor</h4>
+          <p>~20 email subsystems consolidated under one structure, including the Stripe / Stripe Express email refactor as part of the V4.0 cut.</p>
+        </div>
+        <div class="org">
+          <h4>Coupon system, 4-phase delivery</h4>
+          <p>Analysis → Distribution → Refund redistribution → Test coverage → Phased rollout (Distribution / Validation / Commission / Analytics).</p>
+        </div>
+        <div class="org">
+          <h4>Vendor Support module</h4>
+          <p>End-to-end ownership — DB schema + datastore, REST CRUD for tickets &amp; replies, Action Scheduler integration, frontend, email notifications.</p>
+        </div>
+        <div class="org">
+          <h4>JWT license verification</h4>
+          <p>Designed and shipped the JWT-based license check for the Dokan mobile app, with an open follow-up to harden the rotation flow.</p>
+        </div>
+        <div class="org">
+          <h4>PSR-11 service container RFC</h4>
+          <p>Proposed replacing Dokan's array-based container with a real DI container — compared extending WC's <code>ExtendedContainer</code>, a custom Hookable-interface container, and League Container.</p>
+        </div>
+        <div class="org">
+          <h4>CI/CD &amp; test enablement</h4>
+          <p>PHP test cases enabling Dokan-lite CI/CD, plus the Playwright E2E pipeline as the default for the plugin family.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How I work -->
+    <div style="margin-top: 36px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;">
+      <h3 style="margin:0 0 12px;font-size:18px;">How to read these case studies</h3>
+      <p style="color:var(--text-dim);margin:0 0 8px;">The same pattern shows up across all five:</p>
+      <ol style="color:var(--text-dim);margin:0;padding-left:22px;">
+        <li><strong>Analyze first.</strong> Every major piece starts with a written analysis or RFC issue before code is written.</li>
+        <li><strong>Decompose into independent sub-issues.</strong> Reviewers can verify scope by counting sub-issues; engineers can parallelize because the interfaces are explicit.</li>
+        <li><strong>Ship vertically.</strong> Each module gets DB → API → frontend → tests → email/notification → docs, owned by one person end-to-end.</li>
+        <li><strong>Codify the pattern.</strong> After the first one ships, the same structure becomes the template for the next release.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES — Tier 2: Other selected work -->
+  <section id="other-work">
+    <div class="section-kicker">Other selected work</div>
+    <h2>Open source, side projects, and earlier flagship work</h2>
+    <p class="section-sub">Libraries I author, tools I build for fun, and the platforms I shipped on the way here.</p>
+
+    <div class="cases">
 
       <article class="case">
         <div class="case-head">
@@ -743,12 +894,7 @@
           <span class="badge">Open source · Designer/Author</span>
         </div>
         <div class="row-flex"><span class="pill">15 merged PRs</span><span class="pill">Storybook · CI</span></div>
-        <p>A reusable React + TypeScript component library that powers schema-driven settings UIs across multiple WordPress plugins.</p>
-        <ul>
-          <li>Designed the schema-driven settings architecture so plugin teams can ship admin UIs without writing UI code.</li>
-          <li>Bundled shadcn sidebar primitives, a WP Media upload field, and other WP-specific bridges.</li>
-          <li>Scaffolded the CI, ESLint, and Storybook setup so it could be consumed by 6+ plugins.</li>
-        </ul>
+        <p>A reusable React + TypeScript component library that powers schema-driven settings UIs across multiple WordPress plugins. Plugin teams ship admin UIs without writing UI code; the library bundles shadcn sidebar primitives, a WP Media upload field, and other WP-specific bridges.</p>
         <div class="tags chips">
           <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Storybook</span>
         </div>
@@ -759,13 +905,8 @@
           <h3><a href="https://github.com/getdokan/texty" target="_blank" rel="noopener">getdokan/texty</a></h3>
           <span class="badge">Open source · Refactor lead</span>
         </div>
-        <div class="row-flex"><span class="stars">★ 11</span><span class="pill">4 merged PRs (major refactor)</span></div>
-        <p>WordPress SMS notification plugin. I took the lead on a deep refactor to make it extensible, testable, and modern.</p>
-        <ul>
-          <li>Introduced <strong>21 new extensibility hooks</strong> so 3rd parties can extend gateways and events.</li>
-          <li>Resolved SOLID violations and untangled tight coupling between gateway, formatter, and dispatcher.</li>
-          <li>Modernized the Node/PHP toolchain and migrated the settings UI to <code>plugin-ui</code>.</li>
-        </ul>
+        <div class="row-flex"><span class="stars">★ 11</span><span class="pill">21 new extensibility hooks</span></div>
+        <p>WordPress SMS notification plugin. Deep refactor: 21 new extensibility hooks, untangled SOLID violations between gateway/formatter/dispatcher, modernized the Node/PHP toolchain, and migrated the settings UI to <code>plugin-ui</code>.</p>
         <div class="tags chips">
           <span class="chip">PHP</span><span class="chip">WordPress</span><span class="chip">SOLID</span><span class="chip">plugin-ui</span>
         </div>
@@ -774,34 +915,12 @@
       <article class="case">
         <div class="case-head">
           <h3><a href="https://github.com/mrabbani/mcp-site-manager" target="_blank" rel="noopener">mrabbani/mcp-site-manager</a></h3>
-          <span class="badge">Open source · Personal project</span>
+          <span class="badge">Open source · Author</span>
         </div>
-        <div class="row-flex"><span class="pill">MCP server</span><span class="pill">WP Plugin Check: 0 errors</span></div>
-        <p>An MCP server that lets AI agents manage WordPress sites by speaking to the official <a href="https://github.com/WordPress/abilities-api" target="_blank" rel="noopener">WordPress/abilities-api</a> (209★).</p>
-        <ul>
-          <li>Downstream integrator on the abilities-api spec — contributed upstream while building the consumer.</li>
-          <li>Passed the WordPress.org Plugin Check with <strong>zero errors and zero warnings</strong>.</li>
-          <li>Exploring the wider question: how should AI agents safely act on WordPress sites?</li>
-        </ul>
+        <div class="row-flex"><span class="pill">MCP server</span><span class="pill">WP Plugin Check: 0/0</span></div>
+        <p>An MCP server that lets AI agents manage WordPress sites by speaking the official <a href="https://github.com/WordPress/abilities-api" target="_blank" rel="noopener">WordPress/abilities-api</a> (209★). Contributed upstream while building the consumer; passed the WordPress.org Plugin Check with zero errors and zero warnings.</p>
         <div class="tags chips">
           <span class="chip">MCP</span><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">REST</span>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="case-head">
-          <h3>Enzaime PMS Mobile</h3>
-          <span class="badge">Closed source · Ship lead</span>
-        </div>
-        <div class="row-flex"><span class="pill">29 screens</span><span class="pill">Flutter</span></div>
-        <p>A Flutter mobile app for Enzaime's Pharmacy Management System — auth, point-of-sale, inventory, and reports — built end-to-end alongside the PHP backend.</p>
-        <ul>
-          <li>Designed the offline-first data model so POS workflows survive intermittent connectivity.</li>
-          <li>Drove the architectural pattern (state management, repository layer) for the wider Enzaime mobile portfolio.</li>
-          <li>Bridged the Flutter client to the existing Laravel pharmacy / HMS APIs.</li>
-        </ul>
-        <div class="tags chips">
-          <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Laravel</span><span class="chip">REST</span>
         </div>
       </article>
 
@@ -811,13 +930,21 @@
           <span class="badge">Open source · Author</span>
         </div>
         <div class="row-flex"><span class="pill">Laravel package</span><span class="pill">Azure AI Search driver</span></div>
-        <p>An open-source Laravel Scout engine for Azure AI Search — drop-in driver enabling Laravel apps to power full-text search via Azure.</p>
-        <ul>
-          <li>Implemented the Scout engine contract end-to-end (indexing, search, pagination, filters).</li>
-          <li>Documented configuration and shipped with sane defaults for the most common Laravel patterns.</li>
-        </ul>
+        <p>An open-source Laravel Scout engine for Azure AI Search — drop-in driver enabling Laravel apps to power full-text search via Azure. Implements the Scout engine contract end-to-end: indexing, search, pagination, filters.</p>
         <div class="tags chips">
           <span class="chip">Laravel</span><span class="chip">Azure</span><span class="chip">Scout</span><span class="chip">PHP</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Enzaime PMS Mobile</h3>
+          <span class="badge">Closed source · Ship lead</span>
+        </div>
+        <div class="row-flex"><span class="pill">29 screens</span><span class="pill">Flutter</span></div>
+        <p>A Flutter mobile app for Enzaime's Pharmacy Management System — auth, point-of-sale, inventory, reports — built end-to-end alongside the PHP backend. Designed the offline-first data model so POS workflows survive intermittent connectivity, and set the architectural pattern (state management, repository layer) for the wider Enzaime mobile portfolio.</p>
+        <div class="tags chips">
+          <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Laravel</span><span class="chip">REST</span>
         </div>
       </article>
 
@@ -827,11 +954,7 @@
           <span class="badge">Closed source · Solo end-to-end</span>
         </div>
         <div class="row-flex"><span class="pill">tips-api: 118 PRs</span><span class="pill">api · web · auth</span></div>
-        <p>A personal resource planner SaaS where I own the full stack — API, web, and auth services — across 9 repos.</p>
-        <ul>
-          <li>Designed the auth-api / api-app / web split so each service can scale and deploy independently.</li>
-          <li>118 merged PRs on <code>tips-api</code> alone — the highest-velocity codebase in my portfolio.</li>
-        </ul>
+        <p>A personal resource planner SaaS where I own the full stack — API, web, and auth services — across 9 repos. The auth-api / api-app / web split lets each service scale and deploy independently; <code>tips-api</code> is the highest-velocity codebase in my portfolio (118 merged PRs).</p>
         <div class="tags chips">
           <span class="chip">Laravel</span><span class="chip">React</span><span class="chip">REST</span><span class="chip">SaaS</span>
         </div>
@@ -839,15 +962,23 @@
 
       <article class="case">
         <div class="case-head">
-          <h3>Shohoz.com</h3>
-          <span class="badge">Closed source · Platform engineer</span>
+          <h3>Rx71Health</h3>
+          <span class="badge">Earlier · weDevs</span>
         </div>
-        <div class="row-flex"><span class="pill">Travel · Laravel · Couchbase</span></div>
-        <p>Bangladesh's premium online travel service. Worked on platform upgrades, module refactors, and new-feature delivery during a fast-growth period.</p>
-        <ul>
-          <li>Refactored core booking flows for maintainability and added new sales features.</li>
-          <li>Stack: Laravel (PHP), jQuery, MySQL, Couchbase, AWS.</li>
-        </ul>
+        <div class="row-flex"><span class="pill">Slush 2016 selection</span><span class="pill">Laravel · VueJS · Ionic</span></div>
+        <p>Bangladesh's first complete health-assistant app — selected for the Slush Event 2016 from Bangladesh. Owned database design, architecture, coding, testing, and deployment. Stack: Laravel + jQuery + VueJS + MySQL + Memcached + Redis + IonicJS.</p>
+        <div class="tags chips">
+          <span class="chip">Laravel</span><span class="chip">VueJS</span><span class="chip">IonicJS</span><span class="chip">Redis</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Shohoz.com</h3>
+          <span class="badge">Earlier · Shohoj Ltd</span>
+        </div>
+        <div class="row-flex"><span class="pill">Travel · Laravel · Couchbase · AWS</span></div>
+        <p>Bangladesh's premium online travel service. Platform upgrades, module refactors, and new-feature delivery during a fast-growth period. Stack: Laravel (PHP), jQuery, MySQL, Couchbase, AWS.</p>
         <div class="tags chips">
           <span class="chip">Laravel</span><span class="chip">Couchbase</span><span class="chip">AWS</span><span class="chip">MySQL</span>
         </div>
@@ -860,9 +991,9 @@
   <section id="contributions">
     <div class="section-kicker">GitHub footprint</div>
     <h2>Contributions by the numbers</h2>
-    <p class="section-sub">A snapshot of activity across ~80 repositories and 11 organizations since 2013.</p>
+    <p class="section-sub">A snapshot of public GitHub activity across ~80 repositories and 11 organizations.</p>
 
-    <div class="table-wrap" style="margin-bottom:24px;">
+    <div class="table-wrap" style="margin-bottom:14px;">
       <table>
         <thead>
           <tr><th>Year</th><th class="num">Commits</th><th class="num">PRs authored</th><th class="num">PRs reviewed</th></tr>
@@ -871,13 +1002,14 @@
           <tr><td>2026</td><td class="num">303</td><td class="num">42</td><td class="num">39</td></tr>
           <tr><td>2025</td><td class="num">256</td><td class="num">68</td><td class="num highlight-cell">282</td></tr>
           <tr><td>2024</td><td class="num">158</td><td class="num">28</td><td class="num">71</td></tr>
-          <tr><td>2023</td><td class="num">17</td><td class="num">1</td><td class="num">1</td></tr>
-          <tr><td>2022</td><td class="num">32</td><td class="num">5</td><td class="num">0</td></tr>
-          <tr><td>2021</td><td class="num">50</td><td class="num">3</td><td class="num">0</td></tr>
-          <tr><td>2020</td><td class="num">31</td><td class="num">0</td><td class="num">0</td></tr>
         </tbody>
       </table>
     </div>
+
+    <aside style="margin: 0 0 28px; padding: 14px 16px; background: color-mix(in srgb, var(--accent-2) 8%, var(--bg-card)); border: 1px solid color-mix(in srgb, var(--accent-2) 30%, var(--border-strong)); border-left: 3px solid var(--accent-2); border-radius: 10px; color: var(--text-dim); font-size: 14px;">
+      <strong style="color: var(--text);">Note on history.</strong>
+      The table starts at 2024 because most of weLabs's and earlier employers' private work before 2023 lived on <strong>Bitbucket</strong>, not GitHub. The case studies and experience timeline above are the more complete record of what I've actually shipped over the past decade.
+    </aside>
 
     <h3 style="margin:20px 0 12px;font-size:18px;">Organizations I've shipped with</h3>
     <div class="orgs">
