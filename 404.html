@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found — Md. Mahbub Rabbani</title>
+<meta name="robots" content="noindex" />
+<style>
+  :root {
+    --bg: #0b0d12;
+    --text: #e7ecf3;
+    --dim: #9aa3b2;
+    --accent: #6ee7b7;
+    --accent-2: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align: center;
+    padding: 24px;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(700px 400px at 50% 0%, rgba(96,165,250,0.10), transparent 60%),
+      radial-gradient(600px 350px at 50% 100%, rgba(110,231,183,0.08), transparent 60%);
+  }
+  .wrap { position: relative; max-width: 540px; }
+  .num {
+    font-size: clamp(72px, 18vw, 140px);
+    line-height: 1;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  h1 { margin: 8px 0 12px; font-size: 22px; }
+  p { color: var(--dim); margin: 0 0 24px; }
+  a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #0a0f1c;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  a:hover { filter: brightness(1.05); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="num">404</p>
+    <h1>This page wandered off.</h1>
+    <p>The URL doesn't match anything here. Head back to the portfolio.</p>
+    <a href="/">← Back to home</a>
+  </div>
+</body>
+</html>

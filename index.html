@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Md. Mahbub Rabbani — CTO · Tech Lead · Full-Stack Engineer</title>
+<meta name="description" content="Portfolio of Md. Mahbub Rabbani — CTO at weLabs, Dokan Plugins Tech Lead at weDevs. 10+ years building WordPress products, SaaS platforms, and developer tooling." />
+<meta name="author" content="Md. Mahbub Rabbani" />
+<link rel="canonical" href="https://mrabbani.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mrabbani.github.io/" />
+<meta property="og:title" content="Md. Mahbub Rabbani — CTO · Tech Lead · Full-Stack Engineer" />
+<meta property="og:description" content="10+ years building WordPress products, SaaS platforms, and developer tooling. CTO at weLabs, Dokan Plugins Tech Lead at weDevs." />
+<meta property="og:site_name" content="Md. Mahbub Rabbani" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Md. Mahbub Rabbani — CTO · Tech Lead · Full-Stack Engineer" />
+<meta name="twitter:description" content="10+ years building WordPress products, SaaS platforms, and developer tooling. CTO at weLabs, Dokan Plugins Tech Lead at weDevs." />
+<meta name="theme-color" content="#0b0d12" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%236ee7b7'/%3E%3Cstop offset='100%25' stop-color='%2360a5fa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230b0d12'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-family='-apple-system,Segoe UI,Roboto,sans-serif' font-weight='800' font-size='54' fill='url(%23g)'%3EM%3C/text%3E%3C/svg%3E" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Md. Mahbub Rabbani",
+  "url": "https://mrabbani.github.io/",
+  "jobTitle": "Chief Technology Officer",
+  "worksFor": [
+    {"@type": "Organization", "name": "weLabs Limited", "url": "https://welabs.dev"},
+    {"@type": "Organization", "name": "weDevs Limited", "url": "https://wedevs.com"}
+  ],
+  "address": {"@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD"},
+  "sameAs": [
+    "https://github.com/mrabbani",
+    "https://stackoverflow.com/users/2286634/mrabbani",
+    "https://laracasts.com/@mrabbani"
+  ],
+  "email": "mahbub@welabs.dev"
+}
+</script>
+<style>
+  :root {
+    --bg: #0b0d12;
+    --bg-elev: #11141b;
+    --bg-card: #141823;
+    --border: #1f2433;
+    --border-strong: #2a3145;
+    --text: #e7ecf3;
+    --text-dim: #9aa3b2;
+    --text-mute: #6b7280;
+    --accent: #6ee7b7;
+    --accent-2: #60a5fa;
+    --accent-3: #f0abfc;
+    --warn: #fbbf24;
+    --success: #34d399;
+    --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    --radius: 14px;
+    --max: 1100px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root[data-theme="auto"] {
+      --bg: #f7f8fb;
+      --bg-elev: #ffffff;
+      --bg-card: #ffffff;
+      --border: #e6e9ef;
+      --border-strong: #d1d6e0;
+      --text: #0f172a;
+      --text-dim: #475569;
+      --text-mute: #64748b;
+      --accent: #059669;
+      --accent-2: #2563eb;
+      --accent-3: #c026d3;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+  }
+
+  :root[data-theme="light"] {
+    --bg: #f7f8fb;
+    --bg-elev: #ffffff;
+    --bg-card: #ffffff;
+    --border: #e6e9ef;
+    --border-strong: #d1d6e0;
+    --text: #0f172a;
+    --text-dim: #475569;
+    --text-mute: #64748b;
+    --accent: #059669;
+    --accent-2: #2563eb;
+    --accent-3: #c026d3;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; }
+
+  /* Background flourish */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(900px 500px at 90% -10%, rgba(96,165,250,0.10), transparent 60%),
+      radial-gradient(700px 400px at -10% 10%, rgba(110,231,183,0.08), transparent 60%),
+      radial-gradient(800px 500px at 50% 110%, rgba(240,171,252,0.06), transparent 60%);
+    z-index: 0;
+  }
+
+  /* Nav */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(140%) blur(10px);
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .brand .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .nav-links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .nav-links a {
+    color: var(--text-dim);
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--bg-elev); text-decoration: none; }
+  .theme-toggle {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .theme-toggle:hover { border-color: var(--border-strong); }
+
+  /* Container */
+  .container { max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 56px;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  .hero h1 .accent {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2) 60%, var(--accent-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero .lede {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 720px;
+    margin: 0 0 28px;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-elev);
+    color: var(--text);
+    cursor: pointer;
+    transition: transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); border-color: var(--accent); }
+  .btn.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border-color: transparent;
+    color: #0a0f1c;
+  }
+  .btn.primary:hover { filter: brightness(1.05); }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 14px;
+    margin-top: 42px;
+  }
+  .stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 18px 16px;
+    box-shadow: var(--shadow);
+  }
+  .stat .num {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .stat .lbl { font-size: 13px; color: var(--text-dim); margin-top: 6px; }
+  @media (max-width: 760px) {
+    .stats { grid-template-columns: repeat(2,1fr); }
+  }
+
+  /* Sections */
+  section { padding: 60px 0; position: relative; z-index: 1; }
+  section h2 {
+    font-size: clamp(22px, 3vw, 30px);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+  section .section-kicker {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 6px;
+  }
+  section .section-sub { color: var(--text-dim); margin: 0 0 28px; max-width: 720px; }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .about-grid p { color: var(--text-dim); }
+  .about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .about-card h4 { margin: 0 0 12px; font-size: 14px; color: var(--text-mute); letter-spacing: 0.08em; text-transform: uppercase; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; font-size: 14px; }
+  .kv dt { color: var(--text-mute); }
+  .kv dd { margin: 0; color: var(--text); }
+  @media (max-width: 800px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Experience timeline */
+  .timeline { position: relative; padding-left: 22px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px; top: 4px; bottom: 4px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+  .role { position: relative; padding: 0 0 22px 6px; }
+  .role::before {
+    content: "";
+    position: absolute;
+    left: -22px; top: 8px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .role .meta { font-size: 13px; color: var(--text-mute); }
+  .role h3 { margin: 2px 0 4px; font-size: 17px; }
+  .role .where { color: var(--text-dim); font-size: 14px; }
+
+  /* Skills */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 14px;
+  }
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+  .skill-card h4 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12.5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  @media (max-width: 760px) {
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Case studies */
+  .cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .case {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .case:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+  .case .case-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .case h3 { margin: 0; font-size: 18px; }
+  .case .badge {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-2) 30%, transparent);
+    border-radius: 999px;
+    padding: 3px 10px;
+  }
+  .case .stars { font-size: 12px; color: var(--warn); }
+  .case p { margin: 0; color: var(--text-dim); }
+  .case ul { margin: 6px 0 0; padding-left: 18px; color: var(--text-dim); }
+  .case ul li { margin-bottom: 4px; }
+  .case .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  @media (max-width: 820px) {
+    .cases { grid-template-columns: 1fr; }
+  }
+
+  /* Orgs */
+  .orgs { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+  .org {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+  .org h4 { margin: 0 0 6px; font-size: 16px; }
+  .org .sub { color: var(--text-mute); font-size: 13px; margin-bottom: 10px; }
+  .org .pr-count {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    margin-right: 6px;
+  }
+  .org p { margin: 6px 0 0; color: var(--text-dim); font-size: 14px; }
+  @media (max-width: 900px) {
+    .orgs { grid-template-columns: repeat(2,1fr); }
+  }
+  @media (max-width: 600px) {
+    .orgs { grid-template-columns: 1fr; }
+  }
+
+  /* Activity table */
+  .table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 12px 16px; font-size: 14px; text-align: left; }
+  thead th {
+    background: var(--bg-elev);
+    color: var(--text-mute);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:first-child { border-top: none; }
+  td.num { font-variant-numeric: tabular-nums; }
+  .highlight-cell { color: var(--accent); font-weight: 700; }
+
+  /* Education */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .edu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+  .edu-card h4 { margin: 0 0 4px; font-size: 16px; }
+  .edu-card .meta { color: var(--text-mute); font-size: 13px; }
+  .edu-card p { color: var(--text-dim); margin: 8px 0 0; font-size: 14px; }
+  @media (max-width: 720px) { .edu-grid { grid-template-columns: 1fr; } }
+
+  /* Contact */
+  .contact-card {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, var(--bg-card)), color-mix(in srgb, var(--accent-2) 8%, var(--bg-card)));
+    border: 1px solid var(--border-strong);
+    border-radius: 18px;
+    padding: 32px;
+    text-align: center;
+  }
+  .contact-card h2 { margin: 0 0 8px; }
+  .contact-card p { color: var(--text-dim); margin: 0 0 20px; max-width: 560px; margin-inline: auto; }
+  .contact-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    color: var(--text-mute);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  footer a { color: var(--text-dim); }
+
+  /* Utility */
+  .row-flex { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  .pill .ico { width: 8px; height: 8px; border-radius: 50%; background: var(--success); display: inline-block; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="dot"></span> Mahbub Rabbani</div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Case studies</a>
+      <a href="#contributions">Contributions</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <span class="eyebrow">CTO · Tech Lead · Full-Stack Engineer</span>
+    <h1>Building <span class="accent">WordPress products</span>, SaaS platforms, and developer tooling — at scale.</h1>
+    <p class="lede">
+      I'm Md. Mahbub Rabbani, a senior engineer based in Dhaka, Bangladesh. Currently CTO at
+      <a href="https://welabs.dev" target="_blank" rel="noopener">weLabs</a> and Dokan Plugins Tech Lead at
+      <a href="https://wedevs.com" target="_blank" rel="noopener">weDevs</a>. I've spent the last decade designing
+      systems, leading teams, and shipping products in PHP/Laravel, WordPress, TypeScript/React, and Flutter —
+      from open-source plugins used by thousands of stores to private SaaS platforms.
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="#work">View case studies →</a>
+      <a class="btn" href="https://github.com/mrabbani" target="_blank" rel="noopener">GitHub @mrabbani</a>
+      <a class="btn" href="mailto:mahbub@welabs.dev">Email</a>
+      <span class="pill"><span class="ico"></span> Open to collaboration</span>
+    </div>
+
+    <div class="stats" aria-label="GitHub activity at a glance">
+      <div class="stat"><div class="num">634</div><div class="lbl">Merged PRs across ~80 repos</div></div>
+      <div class="stat"><div class="num">282</div><div class="lbl">Code reviews authored in 2025</div></div>
+      <div class="stat"><div class="num">1,300+</div><div class="lbl">Lifetime commits since 2013</div></div>
+      <div class="stat"><div class="num">11</div><div class="lbl">Orgs: WordPress, e-com, SaaS, health</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-kicker">About</div>
+    <h2>A decade of building, leading, and reviewing code</h2>
+    <p class="section-sub">From an Analytics Executive role in 2014 to a CTO seat today — by way of WordPress products, healthcare platforms, and a multivendor marketplace used worldwide.</p>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          I started my career as an analytics executive and Android developer, then moved into web engineering with Laravel
+          and WordPress at <strong>weDevs</strong> in 2015. Over the next decade I worked across travel-tech
+          (<strong>Shohoz.com</strong>), healthcare (<strong>Enzaime</strong>'s pharmacy + HMS suite, Rx71Health), and the
+          WordPress plugin ecosystem — eventually taking on technical leadership for the <strong>Dokan</strong> multivendor
+          plugin and stepping into the CTO role at <strong>weLabs</strong>.
+        </p>
+        <p>
+          My work today centers on three threads: leading the Dokan plugin family (Tailwind v4 migration, schema-driven UI,
+          Playwright E2E hardening), building the cross-plugin <a href="https://github.com/getdokan/plugin-ui" target="_blank" rel="noopener">plugin-ui</a>
+          component library, and exploring how the Model Context Protocol can bring AI agents into the WordPress world
+          via my <a href="https://github.com/mrabbani/mcp-site-manager" target="_blank" rel="noopener">mcp-site-manager</a> project.
+        </p>
+        <p>
+          I care about code that other engineers can extend — extensibility hooks, SOLID boundaries, schema-driven UIs,
+          and CI that catches regressions before they ship. In 2025 alone, I authored <strong>282 code reviews</strong>
+          on the Dokan product line, which is the part of the job I find most rewarding.
+        </p>
+      </div>
+
+      <aside class="about-card">
+        <h4>Quick facts</h4>
+        <dl class="kv">
+          <dt>Based in</dt><dd>Dhaka, Bangladesh</dd>
+          <dt>Role</dt><dd>CTO, weLabs</dd>
+          <dt>Also</dt><dd>Dokan Plugins Tech Lead, weDevs</dd>
+          <dt>Experience</dt><dd>10+ years</dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/mrabbani" target="_blank" rel="noopener">@mrabbani</a></dd>
+          <dt>Email</dt><dd><a href="mailto:mahbub@welabs.dev">mahbub@welabs.dev</a></dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-kicker">Experience</div>
+    <h2>Career timeline</h2>
+    <p class="section-sub">From analytics executive to CTO — a decade of progressively larger technical responsibility.</p>
+
+    <div class="timeline">
+      <div class="role">
+        <div class="meta">Mar 2024 — Present</div>
+        <h3>Dokan Plugins Tech Lead</h3>
+        <div class="where"><a href="https://wedevs.com/" target="_blank" rel="noopener">weDevs Limited</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">Leading the Dokan plugin family (multivendor marketplace, 285★). Driving Tailwind v4 migration, Playwright E2E pipeline, schema-driven settings UI, and reviewer-of-record for the plugin team.</p>
+      </div>
+
+      <div class="role">
+        <div class="meta">Mar 2023 — Present</div>
+        <h3>Chief Technology Officer</h3>
+        <div class="where"><a href="https://welabs.dev" target="_blank" rel="noopener">weLabs Limited</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">Overall technology leadership — architecture, hiring, cloud (GCP/AWS/DO), and delivery across the agency's client and product portfolio.</p>
+      </div>
+
+      <div class="role">
+        <div class="meta">Jan 2021 — Feb 2023</div>
+        <h3>Team Lead</h3>
+        <div class="where"><a href="https://welabs.dev" target="_blank" rel="noopener">weLabs Limited</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">Led a cross-functional team delivering WordPress plugins, Laravel APIs, and bespoke client platforms (Studilog, Gearo Booking, ShipMyPlants, and others).</p>
+      </div>
+
+      <div class="role">
+        <div class="meta">Nov 2017 — Dec 2020</div>
+        <h3>Senior Software Engineer</h3>
+        <div class="where"><a href="http://enzaime.com/" target="_blank" rel="noopener">Enzaime Ltd.</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">Pharmacy management, hospital management system, and a 29-screen Flutter PMS mobile app covering auth, POS, inventory, and reports.</p>
+      </div>
+
+      <div class="role">
+        <div class="meta">Mar 2017 — Oct 2017</div>
+        <h3>Software Engineer</h3>
+        <div class="where"><a href="https://www.shohoz.com" target="_blank" rel="noopener">Shohoj Ltd.</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">Platform upgrades, refactors, and new-feature development on Bangladesh's leading online travel service (Laravel, MySQL, Couchbase, AWS).</p>
+      </div>
+
+      <div class="role">
+        <div class="meta">Jan 2015 — Feb 2017</div>
+        <h3>Software Engineer</h3>
+        <div class="where"><a href="https://wedevs.com" target="_blank" rel="noopener">weDevs Ltd.</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">WordPress plugin engineering and Laravel product work — including <strong>Rx71Health</strong> (Slush 2016 selection from Bangladesh) and an internal Hospital Management System.</p>
+      </div>
+
+      <div class="role">
+        <div class="meta">Jan 2014 — Dec 2014</div>
+        <h3>Analytics Executive</h3>
+        <div class="where"><a href="http://www.wpp.com/wpp/companies/mrb-bangladesh" target="_blank" rel="noopener">MRB Bangladesh (now Kantar)</a></div>
+        <p style="color:var(--text-dim);margin:6px 0 0;">Built scripting frameworks for survey workflows on Android and desktop (Java/ASP.NET/C#), kicking off the move from analytics into software engineering.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-kicker">Skills</div>
+    <h2>What I build with</h2>
+    <p class="section-sub">A pragmatic stack that's grown alongside the work — favoring tools that are extensible, well-tested, and easy for a team to inherit.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Languages</h4>
+        <div class="chips">
+          <span class="chip">PHP</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Dart</span>
+          <span class="chip">Java</span>
+          <span class="chip">C#</span>
+          <span class="chip">C / C++</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Frameworks & runtimes</h4>
+        <div class="chips">
+          <span class="chip">Laravel</span>
+          <span class="chip">WordPress</span>
+          <span class="chip">WooCommerce</span>
+          <span class="chip">React</span>
+          <span class="chip">Vue</span>
+          <span class="chip">Flutter</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">ASP.NET</span>
+          <span class="chip">Tailwind v4</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Testing & tooling</h4>
+        <div class="chips">
+          <span class="chip">Playwright</span>
+          <span class="chip">PHPUnit</span>
+          <span class="chip">Storybook</span>
+          <span class="chip">ESLint</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">Composer</span>
+          <span class="chip">npm / pnpm</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Cloud & infrastructure</h4>
+        <div class="chips">
+          <span class="chip">Google Cloud</span>
+          <span class="chip">AWS</span>
+          <span class="chip">DigitalOcean</span>
+          <span class="chip">nginx</span>
+          <span class="chip">Apache</span>
+          <span class="chip">Redis</span>
+          <span class="chip">Memcached</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Data</h4>
+        <div class="chips">
+          <span class="chip">MySQL</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">SQL Server</span>
+          <span class="chip">SQLite</span>
+          <span class="chip">Couchbase</span>
+          <span class="chip">REST</span>
+          <span class="chip">SOAP</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Emerging interests</h4>
+        <div class="chips">
+          <span class="chip">Model Context Protocol</span>
+          <span class="chip">WordPress Abilities API</span>
+          <span class="chip">Schema-driven UI</span>
+          <span class="chip">AI-assisted code review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="work">
+    <div class="section-kicker">Selected work</div>
+    <h2>Flagship case studies</h2>
+    <p class="section-sub">A representative slice — open-source plugins, internal platforms, and product launches I led or co-led.</p>
+
+    <div class="cases">
+
+      <article class="case">
+        <div class="case-head">
+          <h3><a href="https://github.com/getdokan/dokan" target="_blank" rel="noopener">getdokan/dokan</a></h3>
+          <span class="badge">Open source · Core contributor</span>
+        </div>
+        <div class="row-flex"><span class="stars">★ 285</span><span class="pill">52 merged PRs</span></div>
+        <p>The multivendor marketplace plugin for WooCommerce — used by tens of thousands of stores. I lead engineering for the Dokan family at weDevs.</p>
+        <ul>
+          <li>Drove the <strong>Tailwind v4 migration</strong> across the admin and vendor dashboard.</li>
+          <li>Stood up the <strong>Playwright E2E pipeline</strong> as the default test harness; hardened analytics test stability.</li>
+          <li>Refactored dashboard panel switching and email template flows for maintainability.</li>
+          <li>Reviewer-of-record: <strong>282 code reviews in 2025</strong> across the Dokan product line.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">PHP</span><span class="chip">React/TS</span><span class="chip">Tailwind v4</span><span class="chip">Playwright</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3><a href="https://github.com/getdokan/plugin-ui" target="_blank" rel="noopener">getdokan/plugin-ui</a></h3>
+          <span class="badge">Open source · Designer/Author</span>
+        </div>
+        <div class="row-flex"><span class="pill">15 merged PRs</span><span class="pill">Storybook · CI</span></div>
+        <p>A reusable React + TypeScript component library that powers schema-driven settings UIs across multiple WordPress plugins.</p>
+        <ul>
+          <li>Designed the schema-driven settings architecture so plugin teams can ship admin UIs without writing UI code.</li>
+          <li>Bundled shadcn sidebar primitives, a WP Media upload field, and other WP-specific bridges.</li>
+          <li>Scaffolded the CI, ESLint, and Storybook setup so it could be consumed by 6+ plugins.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Storybook</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3><a href="https://github.com/getdokan/texty" target="_blank" rel="noopener">getdokan/texty</a></h3>
+          <span class="badge">Open source · Refactor lead</span>
+        </div>
+        <div class="row-flex"><span class="stars">★ 11</span><span class="pill">4 merged PRs (major refactor)</span></div>
+        <p>WordPress SMS notification plugin. I took the lead on a deep refactor to make it extensible, testable, and modern.</p>
+        <ul>
+          <li>Introduced <strong>21 new extensibility hooks</strong> so 3rd parties can extend gateways and events.</li>
+          <li>Resolved SOLID violations and untangled tight coupling between gateway, formatter, and dispatcher.</li>
+          <li>Modernized the Node/PHP toolchain and migrated the settings UI to <code>plugin-ui</code>.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">PHP</span><span class="chip">WordPress</span><span class="chip">SOLID</span><span class="chip">plugin-ui</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3><a href="https://github.com/mrabbani/mcp-site-manager" target="_blank" rel="noopener">mrabbani/mcp-site-manager</a></h3>
+          <span class="badge">Open source · Personal project</span>
+        </div>
+        <div class="row-flex"><span class="pill">MCP server</span><span class="pill">WP Plugin Check: 0 errors</span></div>
+        <p>An MCP server that lets AI agents manage WordPress sites by speaking to the official <a href="https://github.com/WordPress/abilities-api" target="_blank" rel="noopener">WordPress/abilities-api</a> (209★).</p>
+        <ul>
+          <li>Downstream integrator on the abilities-api spec — contributed upstream while building the consumer.</li>
+          <li>Passed the WordPress.org Plugin Check with <strong>zero errors and zero warnings</strong>.</li>
+          <li>Exploring the wider question: how should AI agents safely act on WordPress sites?</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">MCP</span><span class="chip">WordPress</span><span class="chip">PHP</span><span class="chip">REST</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Enzaime PMS Mobile</h3>
+          <span class="badge">Closed source · Ship lead</span>
+        </div>
+        <div class="row-flex"><span class="pill">29 screens</span><span class="pill">Flutter</span></div>
+        <p>A Flutter mobile app for Enzaime's Pharmacy Management System — auth, point-of-sale, inventory, and reports — built end-to-end alongside the PHP backend.</p>
+        <ul>
+          <li>Designed the offline-first data model so POS workflows survive intermittent connectivity.</li>
+          <li>Drove the architectural pattern (state management, repository layer) for the wider Enzaime mobile portfolio.</li>
+          <li>Bridged the Flutter client to the existing Laravel pharmacy / HMS APIs.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Laravel</span><span class="chip">REST</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3><a href="https://github.com/welabs-ltd/azure-scout" target="_blank" rel="noopener">welabs-ltd/azure-scout</a></h3>
+          <span class="badge">Open source · Author</span>
+        </div>
+        <div class="row-flex"><span class="pill">Laravel package</span><span class="pill">Azure AI Search driver</span></div>
+        <p>An open-source Laravel Scout engine for Azure AI Search — drop-in driver enabling Laravel apps to power full-text search via Azure.</p>
+        <ul>
+          <li>Implemented the Scout engine contract end-to-end (indexing, search, pagination, filters).</li>
+          <li>Documented configuration and shipped with sane defaults for the most common Laravel patterns.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">Laravel</span><span class="chip">Azure</span><span class="chip">Scout</span><span class="chip">PHP</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>virtunus — Personal Resource Planner SaaS</h3>
+          <span class="badge">Closed source · Solo end-to-end</span>
+        </div>
+        <div class="row-flex"><span class="pill">tips-api: 118 PRs</span><span class="pill">api · web · auth</span></div>
+        <p>A personal resource planner SaaS where I own the full stack — API, web, and auth services — across 9 repos.</p>
+        <ul>
+          <li>Designed the auth-api / api-app / web split so each service can scale and deploy independently.</li>
+          <li>118 merged PRs on <code>tips-api</code> alone — the highest-velocity codebase in my portfolio.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">Laravel</span><span class="chip">React</span><span class="chip">REST</span><span class="chip">SaaS</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-head">
+          <h3>Shohoz.com</h3>
+          <span class="badge">Closed source · Platform engineer</span>
+        </div>
+        <div class="row-flex"><span class="pill">Travel · Laravel · Couchbase</span></div>
+        <p>Bangladesh's premium online travel service. Worked on platform upgrades, module refactors, and new-feature delivery during a fast-growth period.</p>
+        <ul>
+          <li>Refactored core booking flows for maintainability and added new sales features.</li>
+          <li>Stack: Laravel (PHP), jQuery, MySQL, Couchbase, AWS.</li>
+        </ul>
+        <div class="tags chips">
+          <span class="chip">Laravel</span><span class="chip">Couchbase</span><span class="chip">AWS</span><span class="chip">MySQL</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTRIBUTIONS -->
+  <section id="contributions">
+    <div class="section-kicker">GitHub footprint</div>
+    <h2>Contributions by the numbers</h2>
+    <p class="section-sub">A snapshot of activity across ~80 repositories and 11 organizations since 2013.</p>
+
+    <div class="table-wrap" style="margin-bottom:24px;">
+      <table>
+        <thead>
+          <tr><th>Year</th><th class="num">Commits</th><th class="num">PRs authored</th><th class="num">PRs reviewed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2026</td><td class="num">303</td><td class="num">42</td><td class="num">39</td></tr>
+          <tr><td>2025</td><td class="num">256</td><td class="num">68</td><td class="num highlight-cell">282</td></tr>
+          <tr><td>2024</td><td class="num">158</td><td class="num">28</td><td class="num">71</td></tr>
+          <tr><td>2023</td><td class="num">17</td><td class="num">1</td><td class="num">1</td></tr>
+          <tr><td>2022</td><td class="num">32</td><td class="num">5</td><td class="num">0</td></tr>
+          <tr><td>2021</td><td class="num">50</td><td class="num">3</td><td class="num">0</td></tr>
+          <tr><td>2020</td><td class="num">31</td><td class="num">0</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin:20px 0 12px;font-size:18px;">Organizations I've shipped with</h3>
+    <div class="orgs">
+      <div class="org">
+        <h4><a href="https://github.com/getdokan" target="_blank" rel="noopener">getdokan</a></h4>
+        <div class="sub">Multivendor marketplace product line · primary footprint</div>
+        <div><span class="pr-count">dokan 52</span><span class="pr-count">dokan-pro 26</span><span class="pr-count">storegrowth 21</span><span class="pr-count">plugin-ui 15</span></div>
+        <p>Tech lead role — Tailwind v4, schema-driven settings, custom-table architecture for upsell/BOGO, CI/Storybook scaffolding, Playwright E2E.</p>
+      </div>
+
+      <div class="org">
+        <h4><a href="https://github.com/virtunus" target="_blank" rel="noopener">virtunus</a></h4>
+        <div class="sub">Personal Resource Planner SaaS · end-to-end ownership</div>
+        <div><span class="pr-count">tips-api 118</span><span class="pr-count">todo-api 27</span><span class="pr-count">tips-web 15</span></div>
+        <p>API, web, and auth services for a planning SaaS — 9 repos, fully owned.</p>
+      </div>
+
+      <div class="org">
+        <h4><a href="https://github.com/welabs-ltd" target="_blank" rel="noopener">welabs-ltd</a></h4>
+        <div class="sub">Agency &amp; product engineering</div>
+        <div><span class="pr-count">gearo-booking 43</span><span class="pr-count">studilog 33</span><span class="pr-count">shipmyplants 21</span></div>
+        <p>WordPress plugin work, Laravel product work, and bespoke client platforms; authored <code>azure-scout</code>.</p>
+      </div>
+
+      <div class="org">
+        <h4><a href="https://github.com/enzaime" target="_blank" rel="noopener">enzaime</a></h4>
+        <div class="sub">Healthcare · pharmacy &amp; HMS</div>
+        <div><span class="pr-count">pharmacy 19</span><span class="pr-count">hms 9</span><span class="pr-count">PMS mobile</span></div>
+        <p>Pharmacy management, hospital management system, and the 29-screen Flutter PMS mobile app.</p>
+      </div>
+
+      <div class="org">
+        <h4><a href="https://github.com/wp-erp" target="_blank" rel="noopener">wp-erp</a> &amp; <a href="https://github.com/weDevsOfficial" target="_blank" rel="noopener">weDevsOfficial</a></h4>
+        <div class="sub">Early-career WordPress products</div>
+        <div><span class="pr-count">wp-erp 7</span><span class="pr-count">erp-pro 7</span><span class="pr-count">wp-project-manager 3</span></div>
+        <p>WP HRM, accounting, CRM, and project-management features in the foundational years.</p>
+      </div>
+
+      <div class="org">
+        <h4>Upstream &amp; personal OSS</h4>
+        <div class="sub">Selected non-org repos</div>
+        <div><span class="pr-count">mcp-site-manager 3</span><span class="pr-count">abilities-api 1</span><span class="pr-count">Appsero/client 2</span></div>
+        <p>Upstream fixes to Mozart-compat namespacing in Appsero/client; contributor + integrator on WordPress/abilities-api.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-kicker">Education &amp; programming</div>
+    <h2>Where the foundations were laid</h2>
+    <p class="section-sub">Algorithms and CS fundamentals at Rajshahi University — and a few competitive-programming detours along the way.</p>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h4>B.Sc. (Hons), Computer Science &amp; Engineering</h4>
+        <div class="meta">Rajshahi University · 2008 — 2012 · CGPA 3.41 / 4.00</div>
+        <p>Core CS curriculum: algorithms, OS, databases, networking, compilers. Active in inter-university programming contests.</p>
+      </div>
+      <div class="edu-card">
+        <h4>Competitive programming</h4>
+        <div class="meta">Selected highlights</div>
+        <p>Champion at the Departmental Programming Contest 2011 (Rajshahi University); participant at SUST CSE Carnival, Daffodil Pre-ACM, and the ACM Contest at North South University (all 2011).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-card">
+      <h2>Let's build something together</h2>
+      <p>I'm always up for a conversation about WordPress products, AI-assisted developer tooling, or technical leadership. The fastest way to reach me is email.</p>
+      <div class="contact-row">
+        <a class="btn primary" href="mailto:mahbub@welabs.dev">mahbub@welabs.dev</a>
+        <a class="btn" href="tel:+8801710657376">+880 1710 657376</a>
+        <a class="btn" href="https://github.com/mrabbani" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://stackoverflow.com/users/2286634/mrabbani" target="_blank" rel="noopener">Stack Overflow</a>
+        <a class="btn" href="https://laracasts.com/@mrabbani" target="_blank" rel="noopener">Laracasts</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Md. Mahbub Rabbani · Dhaka, Bangladesh · Built as a single-file portfolio.
+</footer>
+
+<script>
+  // Theme toggle (cycles: auto → dark → light → auto)
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var modes = ['auto', 'dark', 'light'];
+    function getMode() {
+      return root.getAttribute('data-theme') || 'auto';
+    }
+    function setMode(m) {
+      root.setAttribute('data-theme', m);
+      if (btn) btn.textContent = 'Theme: ' + m;
+    }
+    setMode('dark');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var cur = getMode();
+        var next = modes[(modes.indexOf(cur) + 1) % modes.length];
+        setMode(next);
+      });
+    }
+  })();
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
